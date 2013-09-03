@@ -1,0 +1,521 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="bdSecundarioModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="bdSecundarioModelStoreContainer">
+          <EntitySet Name="Cliente" EntityType="bdSecundarioModel.Store.Cliente" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Equipamento" EntityType="bdSecundarioModel.Store.Equipamento" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="EquipamentoHardware" EntityType="bdSecundarioModel.Store.EquipamentoHardware" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Funcao" EntityType="bdSecundarioModel.Store.Funcao" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Funcionario" EntityType="bdSecundarioModel.Store.Funcionario" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Garantia" EntityType="bdSecundarioModel.Store.Garantia" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="LoginCliente" EntityType="bdSecundarioModel.Store.LoginCliente" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="OrdemServico" EntityType="bdSecundarioModel.Store.OrdemServico" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Peca" EntityType="bdSecundarioModel.Store.Peca" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Perfil" EntityType="bdSecundarioModel.Store.Perfil" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Servico" EntityType="bdSecundarioModel.Store.Servico" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Usuario" EntityType="bdSecundarioModel.Store.Usuario" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Email" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Endereco" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Bairro" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Cidade" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Cep" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Estado" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Telefone" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Celular" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Cpf" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Rg" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Equipamento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Fabricante" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Modelo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="IdCliente" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Codigo" Type="int" Nullable="false" />
+          <Property Name="Tipo" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="NumSerie" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="EquipamentoHardware">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdEquipamento" Type="int" Nullable="false" />
+          <Property Name="Processador" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Placa_mae" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Memoria" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="SO" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Video" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Som" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="NumSerie" Type="int" Nullable="false" />
+          <Property Name="Codigo" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Funcao">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Funcao" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Funcionario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="IdFuncao" Type="int" Nullable="false" />
+          <Property Name="Rg" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Cpf" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Endereco" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Bairro" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Cidade" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Estado" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Ativo" Type="bit" />
+          <Property Name="Telefone" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Garantia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdCliente" Type="int" Nullable="false" />
+          <Property Name="IdEquipamento" Type="int" Nullable="false" />
+          <Property Name="Inicio" Type="datetime" Nullable="false" />
+          <Property Name="Termino" Type="datetime" Nullable="false" />
+          <Property Name="Status" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="LoginCliente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdPerfil" Type="int" Nullable="false" />
+          <Property Name="Login" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="IdCliente" Type="int" Nullable="false" />
+          <Property Name="Senha" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Ativo" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrdemServico">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="int" Nullable="false" />
+          <Property Name="IdServico" Type="int" Nullable="false" />
+          <Property Name="IdCliente" Type="int" Nullable="false" />
+          <Property Name="Diagnostico" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="Status" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="idFuncionario" Type="int" Nullable="false" />
+          <Property Name="Realizado" Type="varchar" Nullable="false" MaxLength="200" />
+          <Property Name="IdGarantia" Type="int" Nullable="false" />
+          <Property Name="Entrada" Type="datetime" Nullable="false" />
+          <Property Name="Saida" Type="datetime" Nullable="false" />
+          <Property Name="Total" Type="decimal" Nullable="false" />
+          <Property Name="Defeito" Type="varchar" MaxLength="200" />
+          <Property Name="IdPeca" Type="int" Nullable="false" />
+          <Property Name="IdEquipamento" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Peca">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="int" Nullable="false" />
+          <Property Name="Peca" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Fabricante" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Drive" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Perfil">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Perfil" Type="varchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Servico">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="int" Nullable="false" />
+          <Property Name="Servico" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Valor" Type="decimal" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdFuncionario" Type="int" Nullable="false" />
+          <Property Name="Login" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Senha" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="IdPerfil" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Ativo" Type="bit" />
+        </EntityType>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="bdSecundarioModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="Entities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Clientes" EntityType="bdSecundarioModel.Cliente" />
+          <EntitySet Name="Equipamentoes" EntityType="bdSecundarioModel.Equipamento" />
+          <EntitySet Name="EquipamentoHardwares" EntityType="bdSecundarioModel.EquipamentoHardware" />
+          <EntitySet Name="Funcaos" EntityType="bdSecundarioModel.Funcao" />
+          <EntitySet Name="Funcionarios" EntityType="bdSecundarioModel.Funcionario" />
+          <EntitySet Name="Garantias" EntityType="bdSecundarioModel.Garantia" />
+          <EntitySet Name="LoginClientes" EntityType="bdSecundarioModel.LoginCliente" />
+          <EntitySet Name="OrdemServicoes" EntityType="bdSecundarioModel.OrdemServico" />
+          <EntitySet Name="Pecas" EntityType="bdSecundarioModel.Peca" />
+          <EntitySet Name="Perfils" EntityType="bdSecundarioModel.Perfil" />
+          <EntitySet Name="Servicoes" EntityType="bdSecundarioModel.Servico" />
+          <EntitySet Name="Usuarios" EntityType="bdSecundarioModel.Usuario" />
+        </EntityContainer>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Endereco" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Bairro" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Cidade" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Cep" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Estado" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Telefone" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Celular" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Cpf" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Rg" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Equipamento">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Fabricante" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Modelo" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IdCliente" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Codigo" Type="Int32" Nullable="false" />
+          <Property Name="Tipo" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="NumSerie" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="EquipamentoHardware">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IdEquipamento" Type="Int32" Nullable="false" />
+          <Property Name="Processador" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Placa_mae" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Memoria" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="SO" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Video" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Som" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="NumSerie" Type="Int32" Nullable="false" />
+          <Property Name="Codigo" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Funcao">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Funcao1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Funcionario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IdFuncao" Type="Int32" Nullable="false" />
+          <Property Name="Rg" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Cpf" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Endereco" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Bairro" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Cidade" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Estado" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Ativo" Type="Boolean" />
+          <Property Name="Telefone" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Garantia">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IdCliente" Type="Int32" Nullable="false" />
+          <Property Name="IdEquipamento" Type="Int32" Nullable="false" />
+          <Property Name="Inicio" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Termino" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="LoginCliente">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IdPerfil" Type="Int32" Nullable="false" />
+          <Property Name="Login" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IdCliente" Type="Int32" Nullable="false" />
+          <Property Name="Senha" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Ativo" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OrdemServico">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="Int32" Nullable="false" />
+          <Property Name="IdServico" Type="Int32" Nullable="false" />
+          <Property Name="IdCliente" Type="Int32" Nullable="false" />
+          <Property Name="Diagnostico" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="idFuncionario" Type="Int32" Nullable="false" />
+          <Property Name="Realizado" Type="String" Nullable="false" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="IdGarantia" Type="Int32" Nullable="false" />
+          <Property Name="Entrada" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Saida" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Total" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="Defeito" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="IdPeca" Type="Int32" Nullable="false" />
+          <Property Name="IdEquipamento" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Peca">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="Int32" Nullable="false" />
+          <Property Name="Peca1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Fabricante" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Drive" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Perfil">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Perfil1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="Servico">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Codigo" Type="Int32" Nullable="false" />
+          <Property Name="Servico1" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Valor" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="IdFuncionario" Type="Int32" Nullable="false" />
+          <Property Name="Login" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Senha" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="IdPerfil" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Ativo" Type="Boolean" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="bdSecundarioModelStoreContainer" CdmEntityContainer="Entities">
+          <EntitySetMapping Name="Clientes">
+            <EntityTypeMapping TypeName="bdSecundarioModel.Cliente">
+              <MappingFragment StoreEntitySet="Cliente">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+                <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+                <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+                <ScalarProperty Name="Cep" ColumnName="Cep" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+                <ScalarProperty Name="Celular" ColumnName="Celular" />
+                <ScalarProperty Name="Cpf" ColumnName="Cpf" />
+                <ScalarProperty Name="Rg" ColumnName="Rg" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Equipamentoes">
+            <EntityTypeMapping TypeName="bdSecundarioModel.Equipamento">
+              <MappingFragment StoreEntitySet="Equipamento">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+                <ScalarProperty Name="Fabricante" ColumnName="Fabricante" />
+                <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+                <ScalarProperty Name="NumSerie" ColumnName="NumSerie" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EquipamentoHardwares">
+            <EntityTypeMapping TypeName="bdSecundarioModel.EquipamentoHardware">
+              <MappingFragment StoreEntitySet="EquipamentoHardware">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdEquipamento" ColumnName="IdEquipamento" />
+                <ScalarProperty Name="Processador" ColumnName="Processador" />
+                <ScalarProperty Name="Placa_mae" ColumnName="Placa_mae" />
+                <ScalarProperty Name="Memoria" ColumnName="Memoria" />
+                <ScalarProperty Name="SO" ColumnName="SO" />
+                <ScalarProperty Name="Video" ColumnName="Video" />
+                <ScalarProperty Name="Som" ColumnName="Som" />
+                <ScalarProperty Name="NumSerie" ColumnName="NumSerie" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Funcaos">
+            <EntityTypeMapping TypeName="bdSecundarioModel.Funcao">
+              <MappingFragment StoreEntitySet="Funcao">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Funcao1" ColumnName="Funcao" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Funcionarios">
+            <EntityTypeMapping TypeName="bdSecundarioModel.Funcionario">
+              <MappingFragment StoreEntitySet="Funcionario">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nome" ColumnName="Nome" />
+                <ScalarProperty Name="IdFuncao" ColumnName="IdFuncao" />
+                <ScalarProperty Name="Rg" ColumnName="Rg" />
+                <ScalarProperty Name="Cpf" ColumnName="Cpf" />
+                <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+                <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+                <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+                <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Garantias">
+            <EntityTypeMapping TypeName="bdSecundarioModel.Garantia">
+              <MappingFragment StoreEntitySet="Garantia">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+                <ScalarProperty Name="IdEquipamento" ColumnName="IdEquipamento" />
+                <ScalarProperty Name="Inicio" ColumnName="Inicio" />
+                <ScalarProperty Name="Termino" ColumnName="Termino" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LoginClientes">
+            <EntityTypeMapping TypeName="bdSecundarioModel.LoginCliente">
+              <MappingFragment StoreEntitySet="LoginCliente">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdPerfil" ColumnName="IdPerfil" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+                <ScalarProperty Name="Senha" ColumnName="Senha" />
+                <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OrdemServicoes">
+            <EntityTypeMapping TypeName="bdSecundarioModel.OrdemServico">
+              <MappingFragment StoreEntitySet="OrdemServico">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="IdServico" ColumnName="IdServico" />
+                <ScalarProperty Name="IdCliente" ColumnName="IdCliente" />
+                <ScalarProperty Name="Diagnostico" ColumnName="Diagnostico" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="idFuncionario" ColumnName="idFuncionario" />
+                <ScalarProperty Name="Realizado" ColumnName="Realizado" />
+                <ScalarProperty Name="IdGarantia" ColumnName="IdGarantia" />
+                <ScalarProperty Name="Entrada" ColumnName="Entrada" />
+                <ScalarProperty Name="Saida" ColumnName="Saida" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+                <ScalarProperty Name="Defeito" ColumnName="Defeito" />
+                <ScalarProperty Name="IdPeca" ColumnName="IdPeca" />
+                <ScalarProperty Name="IdEquipamento" ColumnName="IdEquipamento" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Pecas">
+            <EntityTypeMapping TypeName="bdSecundarioModel.Peca">
+              <MappingFragment StoreEntitySet="Peca">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Peca1" ColumnName="Peca" />
+                <ScalarProperty Name="Fabricante" ColumnName="Fabricante" />
+                <ScalarProperty Name="Drive" ColumnName="Drive" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Perfils">
+            <EntityTypeMapping TypeName="bdSecundarioModel.Perfil">
+              <MappingFragment StoreEntitySet="Perfil">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Perfil1" ColumnName="Perfil" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Servicoes">
+            <EntityTypeMapping TypeName="bdSecundarioModel.Servico">
+              <MappingFragment StoreEntitySet="Servico">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+                <ScalarProperty Name="Servico1" ColumnName="Servico" />
+                <ScalarProperty Name="Valor" ColumnName="Valor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Usuarios">
+            <EntityTypeMapping TypeName="bdSecundarioModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="IdFuncionario" ColumnName="IdFuncionario" />
+                <ScalarProperty Name="Login" ColumnName="Login" />
+                <ScalarProperty Name="Senha" ColumnName="Senha" />
+                <ScalarProperty Name="IdPerfil" ColumnName="IdPerfil" />
+                <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

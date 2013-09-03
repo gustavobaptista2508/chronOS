@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestaoManutencaoComputadores", "GestaoManutencaoComputadores\GestaoManutencaoComputadores.csproj", "{058B34FE-DC32-4097-9174-46F0C3673895}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GestaoManutencaoComputadores.Service", "GestaoManutencaoComputadores.Service\GestaoManutencaoComputadores.Service.csproj", "{DCC98480-ADF2-4B3D-B8B0-A36090804F76}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{058B34FE-DC32-4097-9174-46F0C3673895}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{058B34FE-DC32-4097-9174-46F0C3673895}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{058B34FE-DC32-4097-9174-46F0C3673895}.Debug|x64.ActiveCfg = Debug|x64
+		{058B34FE-DC32-4097-9174-46F0C3673895}.Debug|x64.Build.0 = Debug|x64
+		{058B34FE-DC32-4097-9174-46F0C3673895}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{058B34FE-DC32-4097-9174-46F0C3673895}.Release|Any CPU.Build.0 = Release|Any CPU
+		{058B34FE-DC32-4097-9174-46F0C3673895}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{058B34FE-DC32-4097-9174-46F0C3673895}.Release|x64.ActiveCfg = Release|x64
+		{058B34FE-DC32-4097-9174-46F0C3673895}.Release|x64.Build.0 = Release|x64
+		{DCC98480-ADF2-4B3D-B8B0-A36090804F76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCC98480-ADF2-4B3D-B8B0-A36090804F76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCC98480-ADF2-4B3D-B8B0-A36090804F76}.Debug|x64.ActiveCfg = Debug|x64
+		{DCC98480-ADF2-4B3D-B8B0-A36090804F76}.Debug|x64.Build.0 = Debug|x64
+		{DCC98480-ADF2-4B3D-B8B0-A36090804F76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCC98480-ADF2-4B3D-B8B0-A36090804F76}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCC98480-ADF2-4B3D-B8B0-A36090804F76}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{DCC98480-ADF2-4B3D-B8B0-A36090804F76}.Release|x64.ActiveCfg = Release|x64
+		{DCC98480-ADF2-4B3D-B8B0-A36090804F76}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,770 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{058B34FE-DC32-4097-9174-46F0C3673895}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Chronos</RootNamespace>
+    <AssemblyName>chronOS</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>C:\Users\Gustavo\Desktop\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Public|AnyCPU'">
+    <OutputPath>bin\Public\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Release\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Public|x64'">
+    <PlatformTarget>x64</PlatformTarget>
+    <OutputPath>bin\x64\Public\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>1375075493_129154.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>48977FBC28AB7EFEDE8DEBA4A8924739E03DAC85</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>GestaoManutencaoComputadores_ChaveTemporária.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio 10.0\Visual Studio Tools for Office\PIA\Office12\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks.Vs, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\ForcaDaSenha.cs" />
+    <Compile Include="Classes\SenhaForca.cs" />
+    <Compile Include="Classes\TextBoxCorretor.cs" />
+    <Compile Include="Classes\ToolTipHelper.cs" />
+    <Compile Include="FormCadastrarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastrarCliente.Designer.cs">
+      <DependentUpon>FormCadastrarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadastroEquipamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroEquipamento.Designer.cs">
+      <DependentUpon>FormCadastroEquipamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadastroFunc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroFunc.Designer.cs">
+      <DependentUpon>FormCadastroFunc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadastroProd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroProd.Designer.cs">
+      <DependentUpon>FormCadastroProd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadastroServ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroServ.Designer.cs">
+      <DependentUpon>FormCadastroServ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCadastroUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCadastroUsuario.Designer.cs">
+      <DependentUpon>FormCadastroUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormConfigurar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConfigurar.Designer.cs">
+      <DependentUpon>FormConfigurar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEquipamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEquipamentos.Designer.cs">
+      <DependentUpon>FormEquipamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormFuncionarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormFuncionarios.Designer.cs">
+      <DependentUpon>FormFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHome.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHome.Designer.cs">
+      <DependentUpon>FormHome.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListaClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListaClientes.Designer.cs">
+      <DependentUpon>FormListaClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListaServicos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListaServicos.Designer.cs">
+      <DependentUpon>FormListaServicos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormListaUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormListaUsuario.Designer.cs">
+      <DependentUpon>FormListaUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormLogin2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin2.Designer.cs">
+      <DependentUpon>FormLogin2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormPrincipal2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormPrincipal2.Designer.cs">
+      <DependentUpon>FormPrincipal2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormProdutos.Designer.cs">
+      <DependentUpon>FormProdutos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSplash.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSplash.Designer.cs">
+      <DependentUpon>FormSplash.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Preencher.cs" />
+    <Compile Include="printDGV.cs" />
+    <Compile Include="PrintOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PrintOptions.Designer.cs">
+      <DependentUpon>PrintOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <EmbeddedResource Include="FormCadastrarCliente.resx">
+      <DependentUpon>FormCadastrarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroEquipamento.resx">
+      <DependentUpon>FormCadastroEquipamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroFunc.resx">
+      <DependentUpon>FormCadastroFunc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroProd.resx">
+      <DependentUpon>FormCadastroProd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroServ.resx">
+      <DependentUpon>FormCadastroServ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCadastroUsuario.resx">
+      <DependentUpon>FormCadastroUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConfigurar.resx">
+      <DependentUpon>FormConfigurar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEquipamentos.resx">
+      <DependentUpon>FormEquipamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormFuncionarios.resx">
+      <DependentUpon>FormFuncionarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHome.resx">
+      <DependentUpon>FormHome.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListaClientes.resx">
+      <DependentUpon>FormListaClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListaServicos.resx">
+      <DependentUpon>FormListaServicos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormListaUsuario.resx">
+      <DependentUpon>FormListaUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormLogin2.resx">
+      <DependentUpon>FormLogin2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormPrincipal2.resx">
+      <DependentUpon>FormPrincipal2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormProdutos.resx">
+      <DependentUpon>FormProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PrintOptions.resx">
+      <DependentUpon>PrintOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="GestaoManutencaoComputadores_ChaveTemporária.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\GestaoManutencaoComputadores.Service\GestaoManutencaoComputadores.Service.csproj">
+      <Project>{dcc98480-adf2-4b3d-b8b0-a36090804f76}</Project>
+      <Name>GestaoManutencaoComputadores.Service</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1363804288_cross.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1363804160_save_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1363804155_stock_save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1363893325_list-add-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1363803302_contact-new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1363893320_bullet_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1363893318_001_01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1363893208_gtk-edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1363893502_document-delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1363893493_trashcan-delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1363893333_page_white_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1370474372_export_excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Splash.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Banner.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1367446289_iEngrenages.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Fundo.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cadastro.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Cadastro 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1363803296_User.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Teste.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Teste 2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Teste3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\barra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1363946610_user_business_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1363946511_agency.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1370979800_edit-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1370979822_list-add-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1370979932_list-remove-user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1370979815_user_64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1370979962_user_group.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1367949193_onebit_39.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1367440238_employee_user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Observações\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371072667_MyComputer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371072619_My Computer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371072621_-notebook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371072641_Computer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371072665_mycomputer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371072701_Application.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371073335_MB__HW_info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371073677_hardware.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371073878_invoice.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371072747_redhat-system_tools.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 e x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1364255912_print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1370474372_export_excel1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1370979791_Paper-pencil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1364254429_page_white_edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371093095_page_white_add.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sem título.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CadastroCliente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CadastroEquipamento.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login 3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login Desing novo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login Powered by Visual Studio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371072823_MB__shut-down.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BarraPqn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BarraGrd.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CadastroEquip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CadastroUser.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo novo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1374692405_TechnicalSupportRepresentative_Male_Light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1374692405_TechnicalSupportRepresentative_Male_Light1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1374743089_Client_Male_Light.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1366104154_helpdesk_3D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1367362370_provider.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1367821143_preferences-system.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1367821155_control-center2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1367821158_Administrative_Tools-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371072701_Application1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371072771_MB__tools.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371072789_MB__back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371072795_MB__sett-big.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371072797_MB__tasks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371072799_MB__help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371072803_MB__skype-copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371072805_MB__gmail-copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371072808_MB__search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371072809_MB__info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371072811_MB__net.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371072818_MB__Control-Panel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371072823_MB__shut-down1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371072825_MB__touch.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371073291_MB__note.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371073304_MB__Computer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371073309_MB__keyboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371073310_MB__save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371073315_MB__print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371073319_MB__msg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371073330_MB__Base-copy.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371073335_MB__HW_info1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371073352_MB__sett_small.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371073382_MB__pen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371073386_MB__plus.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371073512_MB__keyboard.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371073513_MB__sim.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371073630_Technology.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371073677_hardware1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371073691_RAM Drive.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371073693_Device and Hardware.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371073699_hwinfo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371073706_hardware.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371073767_order-history.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371073845_Doc_yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1371073846_Doc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1374692405_TechnicalSupportRepresentative_Male_Light2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1374743089_Client_Male_Light1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1374743285_Manager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1374743308_Login Manager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1374743309_userconfig.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1374743317_preferences-desktop-user-password.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1374743350_gnome-keyring-manager.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1374743356_lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1374743362_lock yellow.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1374743368_lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1374743378_lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1374743380_lock.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1374743387_lock red.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1374791492_exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1374791616_door_out.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1374792151_Help.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagem1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Imagem2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1374808959_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1374990085_read_more.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="1375075493_129154.ico" />
+    <Content Include="chroDatabase.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="chroDatabase_log.ldf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>chroDatabase.mdf</DependentUpon>
+    </Content>
+    <None Include="Resources\1375479962_back.png" />
+    <None Include="Resources\1375479948_Window_App_List.png" />
+    <None Include="Resources\1375479942_list.png" />
+    <None Include="Resources\1375479859_arrow-refresh.png" />
+    <None Include="Resources\1375479803_quick_restart.png" />
+    <None Include="Resources\1375479788_Shutdown_Box_Red.png" />
+    <None Include="Resources\1375479778_exit.png" />
+    <None Include="Resources\1375479551_exit.png" />
+    <None Include="Resources\1375298011_old-edit-find.png" />
+    <None Include="Resources\top.png" />
+    <None Include="Resources\Slide4.PNG" />
+    <None Include="Resources\chronOS logo banner top.png" />
+    <None Include="Resources\Banner Top.png" />
+    <None Include="Resources\Banner Bottom.png" />
+    <None Include="Resources\LoginTeste.png" />
+    <None Include="Resources\banners top.png" />
+    <None Include="Resources\banners bottom.png" />
+    <None Include="Resources\chronoOS.png" />
+    <None Include="Resources\Banner Top branco.png" />
+    <None Include="Resources\1375216656_update.png" />
+    <None Include="Resources\1375216652_system-software-update.png" />
+    <None Include="Resources\1375216567_reload.png" />
+    <None Include="Resources\1375216164_refresh.png" />
+    <None Include="Resources\1375216156_database_refresh.png" />
+    <None Include="Resources\1375216153_arrow_circle_left.png" />
+    <None Include="Resources\1375216145_refresh.png" />
+    <None Include="Resources\1375058686_restart-1.png" />
+    <None Include="Resources\1375058684_arrow_left.png" />
+    <None Include="Resources\1375058673_arrow-down.png" />
+    <None Include="Resources\1375058651_arrow_left_alt1.png" />
+    <None Include="Resources\1375058649_back.png" />
+    <None Include="Resources\1375058643_back-alt.png" />
+    <None Include="Resources\1375057661_cog_edit.png" />
+    <None Include="Resources\1375054921_configure.png" />
+    <None Include="Resources\1375054459_preferences_128.png" />
+    <None Include="Resources\1375054433_gear_64.png" />
+    <None Include="Resources\1375054399_konqueror.png" />
+    <None Include="Resources\1375054378_settings.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
